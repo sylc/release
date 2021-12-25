@@ -6,7 +6,9 @@ import { ezgit } from "./src/git.ts";
 
 import { github } from "./plugins/github/mod.ts";
 import { changelog } from "./plugins/changelog/mod.ts";
+import { regex } from "./plugins/regex/mod.ts";
 import { zen } from "./zen.ts";
+import { versionFile } from "./plugins/versionFile/mod.ts";
 
 const logger = log.create("r");
 
@@ -61,7 +63,7 @@ example: ${colors.yellow("release")} major
   }
 
   const config: ReleaseConfig = {
-    plugins: [github, changelog],
+    plugins: [github, changelog, regex, versionFile],
     dry: false,
   };
 
@@ -129,7 +131,7 @@ example: ${colors.yellow("release")} major
   const from = latest ? latest.version : "0.0.0";
   const to = semver.inc(from, action, undefined, suffix)!;
 
-  let integrity = wait("Checking the project").start();
+  const integrity = wait("Checking the project").start();
   await delay(1000);
   if (repo.status.raw.length !== 0) {
     integrity.fail("Uncommitted changes on your repository!");
