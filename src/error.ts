@@ -7,10 +7,10 @@ const causes = {
 
 export class ReleaseError extends Error {
   code: string;
-  cause: string;
+  internal_cause: string;
   constructor(code: keyof typeof causes, message?: string) {
     super(message ?? causes[code]);
     this.code = code;
-    this.cause = causes[code];
+    this.internal_cause = causes[code];
   }
 }
