@@ -1,27 +1,18 @@
-# release
+# release-me
 
-[![Tags](https://img.shields.io/github/release/denosaurs/release)](https://github.com/denosaurs/release/releases)
-[![CI Status](https://img.shields.io/github/workflow/status/denosaurs/release/check)](https://github.com/denosaurs/release/actions)
-[![License](https://img.shields.io/github/license/denosaurs/release)](https://github.com/denosaurs/release/blob/master/LICENSE)
-
-<p align="center">
-  <br>
-  <img src="assets/example.svg" width="500">
-  <br>
-</p>
 
 ## Installation
 
 ```
-$ deno install -A -f --unstable https://deno.land/x/release@0.1.3/release.ts
+$ deno install -A -f --unstable ...
 ```
 
 ## Usage
 
 ```
-usage: release [options] <type> [...]
+usage: release-me [options] <type> [...]
 
-example: release major
+example: release-me major
 
 [options]:
   -h --help     Show this message
@@ -37,17 +28,12 @@ example: release major
     * premajor <name>   eg: 1.2.3 -> 1.2.4-name
 ```
 
-## Maintainers
+## Credits
 
-- Filippo Rossi ([@qu4k](https://github.com/qu4k))
-
-## Other
+Big Credits to https://github.com/denosaurs. This project is mainly based on https://github.com/denosaurs/release, where I have done some minor refacatoring.
+However due to the lack of development on the original package, I have done some update to suit my needs
 
 ### Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
 deno fmt and commit messages are done following Conventional Commits spec.
-
-### Licence
-
-Copyright 2020-present, the denosaurs team. All rights reserved. MIT license.
